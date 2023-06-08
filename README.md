@@ -23,9 +23,18 @@ ros2 run image_tools  cam2image --ros-args -p width:=640 -p height:=480 -p frequ
 ```
 
 也可使用其它相机，如`usb_cam`。参数`image_topic`修改为`image_topic:=/image_raw`
+e.g.
+```bash
+ros2 run yolov5_ros2 yolo_detect_2d --ros-args -p device:=cpu -p image_topic:=/image_raw -p show_result:=True
+```
 ```bash
 sudo apt-get install ros-<ros2-distro>-usb-cam # 安装
 ros2 run usb_cam usb_cam_node_exe
+ros2 run usb_cam usb_cam_node_exe --ros-args --params-file /path/to/colcon_ws/src/usb_cam/config/params.yaml
+```
+e.g.
+```bash
+ros2 run usb_cam usb_cam_node_exe --ros-args --params-file /home/rosi/ROS2_ws/usb_cam/config/params.yaml
 ```
 
 ![](https://img-blog.csdnimg.cn/c65bed0b67694ed69776151c203bb950.png)
